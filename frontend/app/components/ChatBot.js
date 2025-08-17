@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { API_URLS } from '../config/api';
 
 export default function ChatBot({ documentText }) {
   const [messages, setMessages] = useState([]);
@@ -28,7 +29,7 @@ export default function ChatBot({ documentText }) {
         }))
         .filter(item => item.question && item.answer);
 
-      const response = await fetch('http://localhost:3001/chat', {
+      const response = await fetch(API_URLS.CHAT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

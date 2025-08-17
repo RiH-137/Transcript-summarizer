@@ -11,6 +11,7 @@ import ExportSection from './components/ExportSection';
 import EmailSection from './components/EmailSection';
 import ChatBot from './components/ChatBot';
 import FeaturesSection from './components/FeaturesSection';
+import { API_URLS } from './config/api';
 
 export default function MangoDeskPage() {
   const [text, setText] = useState('');
@@ -36,7 +37,7 @@ export default function MangoDeskPage() {
     setSummary('Generating summary...');
     
     try {
-      const payload = { 
+      const payload = {
         text, 
         prompt, 
         mode, 
@@ -46,15 +47,13 @@ export default function MangoDeskPage() {
       };
       console.log('Sending payload:', payload);
       
-      const res = await fetch('http://localhost:3001/summarize', {
+      const res = await fetch(API_URLS.SUMMARIZE, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
       
-      console.log('Response status:', res.status);
-      
-      if (!res.ok) {
+      console.log('Response status:', res.status);      if (!res.ok) {
         const errorData = await res.json().catch(() => ({ error: 'Summarization failed' }));
         throw new Error(errorData.error || `Request failed: ${res.status}`);
       }

@@ -1,4 +1,5 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
+import { API_URLS } from '../../config/api';
 
 export async function POST(request) {
   try {
@@ -13,7 +14,7 @@ export async function POST(request) {
     const backendForm = new FormData();
     backendForm.append('file', file);
 
-    const response = await fetch('http://localhost:3001/upload', {
+    const response = await fetch(API_URLS.UPLOAD, {
       method: 'POST',
       body: backendForm,
     });
