@@ -96,7 +96,7 @@ export default function ChatBot({ documentText }) {
             {messages.length === 0 && (
               <div className="text-center text-gray-500 py-8">
                 <p className="text-sm">Ask me anything about your document!</p>
-                <p className="text-xs mt-1 text-gray-400">Try: "What are the key points?" or "Summarize the main ideas"</p>
+                <p className="text-xs mt-1 text-gray-400">Try: &ldquo;What are the key points?&rdquo; or &ldquo;Summarize the main ideas&rdquo;</p>
               </div>
             )}
             

@@ -1,23 +1,29 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { API_URLS } from '../config/api';
 
 export default function KeyPoints({ originalText, summary, onKeyPointsUpdate }) {
   const [keyPoints, setKeyPoints] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  // extracting the key points
-  useEffect(() => {
-    if (originalText && summary && summary !== 'Generating summary...' && !summary.startsWith('❌')) {
-      extractKeyPoints();
-    } else {
-      const points = [];
-      setKeyPoints(points);
-      onKeyPointsUpdate?.(points);
-    }
-  }, [originalText, summary]);
+  // simple extraction of key points
+  const getSimpleKeyPoints = useCallback(() => {
+    if (!originalText) return [];
+    
+    const sentences = originalText.split(/[.!?]+/).filter(s => s.trim().length > 20);
+    const keywords = ['important', 'key', 'decision', 'action', 'deadline', 'critical', 'must', 'should', 'will', 'agreed', 'decided'];
+    
+    return sentences
+      .filter(sentence => 
+        keywords.some(keyword => 
+          sentence.toLowerCase().includes(keyword)
+        )
+      )
+      .slice(0, 8)
+      .map(sentence => sentence.trim());
+  }, [originalText]);
 
-  async function extractKeyPoints() {
+  const extractKeyPoints = useCallback(async () => {
     if (!originalText || !summary) return;
     
     setIsLoading(true);
@@ -48,24 +54,18 @@ export default function KeyPoints({ originalText, summary, onKeyPointsUpdate }) 
     setKeyPoints(simplePoints);
     onKeyPointsUpdate?.(simplePoints);
     setIsLoading(false);
-  }
+  }, [originalText, summary, onKeyPointsUpdate, getSimpleKeyPoints]);
 
-  // simple extraction of key points
-  function getSimpleKeyPoints() {
-    if (!originalText) return [];
-    
-    const sentences = originalText.split(/[.!?]+/).filter(s => s.trim().length > 20);
-    const keywords = ['important', 'key', 'decision', 'action', 'deadline', 'critical', 'must', 'should', 'will', 'agreed', 'decided'];
-    
-    return sentences
-      .filter(sentence => 
-        keywords.some(keyword => 
-          sentence.toLowerCase().includes(keyword)
-        )
-      )
-      .slice(0, 8)
-      .map(sentence => sentence.trim());
-  }
+  // extracting the key points
+  useEffect(() => {
+    if (originalText && summary && summary !== 'Generating summary...' && !summary.startsWith('❌')) {
+      extractKeyPoints();
+    } else {
+      const points = [];
+      setKeyPoints(points);
+      onKeyPointsUpdate?.(points);
+    }
+  }, [originalText, summary, extractKeyPoints, onKeyPointsUpdate]);
 
   const displayPoints = keyPoints;
 
