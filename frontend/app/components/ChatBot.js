@@ -69,7 +69,7 @@ export default function ChatBot({ documentText }) {
 
   if (!documentText) {
     return (
-      <div className="bg-white p-4 rounded shadow-sm">
+      <div className="section-card">
         <h3 className="font-medium text-gray-800 mb-3">Document Q&A</h3>
         <p className="text-gray-500 text-sm">Upload a document to start asking questions about its content.</p>
       </div>
@@ -82,7 +82,7 @@ export default function ChatBot({ documentText }) {
         <div className="flex items-center justify-between">
           <h3 className="font-medium text-gray-800">Document Q&A...</h3>
           {messages.length > 0 && (
-            <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">
+            <span className="badge-gray">
               {messages.length} messages
             </span>
           )}
@@ -105,11 +105,7 @@ export default function ChatBot({ documentText }) {
                 className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[80%] p-3 rounded-lg ${
-                    message.type === 'user'
-                      ? 'bg-[#417C7E] text-white ml-4'
-                      : 'bg-gray-100 text-gray-800 mr-4'
-                  }`}
+                  className={`chat-message ${message.type === 'user' ? 'user ml-4' : 'bot mr-4'}`}
                 >
                   <div className="text-sm">{message.content}</div>
                   <div className={`text-xs mt-1 opacity-70 ${
@@ -123,10 +119,12 @@ export default function ChatBot({ documentText }) {
             
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-gray-100 text-gray-800 p-3 rounded-lg mr-4">
+                <div className="chat-typing">
                   <div className="flex items-center space-x-2">
-                    <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                    <div className="loading-dots flex space-x-1">
+                      <div style={{ animationDelay: '0.0s' }}></div>
+                      <div style={{ animationDelay: '0.1s' }}></div>
+                      <div style={{ animationDelay: '0.2s' }}></div>
                     </div>
                     <span className="text-sm">Thinking...</span>
                   </div>
@@ -144,13 +142,13 @@ export default function ChatBot({ documentText }) {
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyPress={(e) => e.key === 'Enter' && !isLoading && sendMessage()}
                 placeholder="Ask a question about your document..."
-                className="flex-1 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#417C7E] focus:border-transparent text-sm"
+                className="input-field-sm"
                 disabled={isLoading}
               />
               <button
                 onClick={sendMessage}
                 disabled={isLoading || !inputMessage.trim()}
-                className="px-4 py-2 bg-[#417C7E] text-white rounded-md hover:bg-[#2f5a5c] disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium"
+                className="btn-primary-sm"
               >
                 {isLoading ? '...' : 'Send'}
               </button>

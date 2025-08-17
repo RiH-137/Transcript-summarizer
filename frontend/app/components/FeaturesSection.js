@@ -68,19 +68,19 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-teal-100"
+              className="feature-card"
             >
               <div className="mb-4">
-                <h3 className="text-lg font-semibold text-teal-800 mb-3">
+                <h3 className="feature-title">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="feature-description">
                   {feature.description}
                 </p>
               </div>
               <div className="mt-4 pt-4 border-t border-teal-100">
-                <div className="w-full bg-teal-100 rounded-full h-1">
-                  <div className="bg-teal-600 h-1 rounded-full w-full"></div>
+                <div className="feature-progress-bg">
+                  <div className="feature-progress-fill"></div>
                 </div>
               </div>
             </div>

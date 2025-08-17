@@ -105,21 +105,19 @@ Best regards`;
   return (
     <div className="mt-4 bg-white border border-gray-200 rounded-lg overflow-hidden">
     
-      <div className="px-4 py-3 bg-gray-50 border-b border-gray-200">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <h3 className="font-medium text-gray-800">Email Summary</h3>
-            {!hasContent && (
-              <span className="text-xs text-gray-500 bg-gray-200 px-2 py-1 rounded-full">
-                Generate summary first
-              </span>
-            )}
-          </div>
-          <div className="flex items-center space-x-2">
-            {message && (
-              <span className="text-sm text-gray-600">{message}</span>
-            )}
-          </div>
+      <div className="section-header-compact">
+        <div className="flex items-center space-x-2">
+          <h3 className="font-medium text-gray-800">Email Summary</h3>
+          {!hasContent && (
+            <span className="badge-gray">
+              Generate summary first
+            </span>
+          )}
+        </div>
+        <div className="flex items-center space-x-2">
+          {message && (
+            <span className="text-sm text-gray-600">{message}</span>
+          )}
         </div>
       </div>
 
@@ -133,13 +131,13 @@ Best regards`;
             <>
               {/* integrating provider */}
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
+                <label className="label-text">
                   Email Provider
                 </label>
                 <select
                   value={formData.emailProvider}
                   onChange={(e) => handleInputChange('emailProvider', e.target.value)}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#417C7E] focus:border-[#417C7E]"
+                  className="input-field"
                   disabled={sending}
                 >
                   {emailProviders.map(provider => (
@@ -151,9 +149,9 @@ Best regards`;
               </div>
 
               {/* sender cred added */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid-2-cols">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="label-text">
                     Your Email Address *
                   </label>
                   <input
@@ -161,13 +159,13 @@ Best regards`;
                     value={formData.senderEmail}
                     onChange={(e) => handleInputChange('senderEmail', e.target.value)}
                     placeholder="your.email@gmail.com"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#417C7E] focus:border-[#417C7E]"
+                    className="input-field"
                     disabled={sending}
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="label-text">
                     App Password Only*
                   </label>
                   <input
@@ -175,7 +173,7 @@ Best regards`;
                     value={formData.senderPassword}
                     onChange={(e) => handleInputChange('senderPassword', e.target.value)}
                     placeholder="Your email password"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#417C7E] focus:border-[#417C7E]"
+                    className="input-field"
                     disabled={sending}
                   />
                   <p className="text-xs text-gray-500 mt-1">
@@ -185,9 +183,9 @@ Best regards`;
               </div>
 
               {/* recep and subject */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid-2-cols">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="label-text">
                     Recipient Email *
                   </label>
                   <input
@@ -195,20 +193,20 @@ Best regards`;
                     value={formData.recipientEmail}
                     onChange={(e) => handleInputChange('recipientEmail', e.target.value)}
                     placeholder="recipient@company.com"
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#417C7E] focus:border-[#417C7E]"
+                    className="input-field"
                     disabled={sending}
                   />
                 </div>
                 
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                  <label className="label-text">
                     Subject
                   </label>
                   <input
                     type="text"
                     value={formData.subject}
                     onChange={(e) => handleInputChange('subject', e.target.value)}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#417C7E] focus:border-[#417C7E]"
+                    className="input-field"
                     disabled={sending}
                   />
                 </div>
@@ -232,10 +230,10 @@ Best regards`;
               {message && (
                 <div className={`p-3 rounded-md text-sm ${
                   message.startsWith('✅') 
-                    ? 'bg-green-50 text-green-700 border border-green-200' 
+                    ? 'message-success' 
                     : message.startsWith('❌')
-                    ? 'bg-red-50 text-red-700 border border-red-200'
-                    : 'bg-blue-50 text-blue-700 border border-blue-200'
+                    ? 'message-error'
+                    : 'message-info'
                 }`}>
                   {message}
                 </div>
@@ -246,11 +244,11 @@ Best regards`;
                 <button
                   onClick={handleSendEmail}
                   disabled={sending || !formData.senderEmail || !formData.senderPassword || !formData.recipientEmail}
-                  className="w-full px-4 py-2 bg-[#417C7E] text-white rounded-md hover:bg-[#2d5759] disabled:bg-gray-400 disabled:cursor-not-allowed transition-colors flex items-center justify-center space-x-2"
+                  className="w-full btn-primary flex items-center justify-center space-x-2"
                 >
                   {sending ? (
                     <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                      <div className="loading-spinner h-4 w-4 border-white"></div>
                       <span>Sending...</span>
                     </>
                   ) : (

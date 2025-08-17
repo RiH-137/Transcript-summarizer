@@ -1,2 +1,262 @@
 @import "tailwindcss";
 
+
+/* Primary Button - Main Actions */
+.btn-primary {
+  @apply px-4 py-2 bg-[#417C7E] text-white rounded-lg hover:bg-[#2d5759] transition-all duration-200 shadow-md hover:shadow-lg disabled:bg-gray-400 disabled:cursor-not-allowed font-medium;
+}
+
+.btn-primary-sm {
+  @apply px-3 py-2 bg-[#417C7E] text-white rounded-md hover:bg-[#2f5a5c] disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium;
+}
+
+.btn-primary-lg {
+  @apply px-6 py-2 bg-[#417C7E] text-white rounded-lg hover:bg-[#2d5759] transition-all duration-200 shadow-md hover:shadow-lg flex items-center space-x-2;
+}
+
+/* Secondary Button - Secondary Actions */
+.btn-secondary {
+  @apply px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-gray-700 font-medium transition-colors border border-gray-300;
+}
+
+.btn-secondary-sm {
+  @apply px-3 py-1 text-xs border border-gray-300 rounded hover:bg-white transition-colors;
+}
+
+.btn-export {
+  @apply flex items-center justify-center px-3 py-2 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm font-medium text-gray-700 transition-colors border border-gray-300;
+}
+
+
+.btn-selectable {
+  @apply px-4 py-2 rounded-lg border-2 transition-all duration-200 cursor-pointer;
+}
+
+.btn-selectable.selected {
+  @apply border-[#417C7E] bg-[#417C7E]/10 text-[#417C7E];
+}
+
+.btn-selectable:not(.selected) {
+  @apply border-gray-300 bg-white text-gray-700 hover:border-gray-400;
+}
+
+/* language Button */
+.btn-language {
+  @apply px-4 py-2 rounded-full border-2 transition-all duration-200 cursor-pointer;
+}
+
+.btn-language.selected {
+  @apply border-[#417C7E] bg-[#417C7E]/10 text-[#417C7E];
+}
+
+.btn-language:not(.selected) {
+  @apply border-gray-300 bg-white text-gray-700 hover:border-gray-400;
+}
+
+/* persona Cards */
+.card-persona {
+  @apply px-4 py-3 rounded-lg border-2 transition-all duration-200 cursor-pointer;
+}
+
+.card-persona.selected {
+  @apply border-[#417C7E] bg-[#417C7E]/5 text-[#417C7E];
+}
+
+.card-persona:not(.selected) {
+  @apply border-gray-300 bg-white text-gray-700 hover:border-gray-400 hover:bg-gray-50;
+}
+
+
+
+/* standard card/section styling */
+.section-card {
+  @apply bg-white rounded-lg shadow-sm border border-gray-100 p-4;
+}
+
+.section-card-lg {
+  @apply bg-white rounded-lg shadow-sm border border-gray-100 p-6;
+}
+
+/* card headers */
+.section-header {
+  @apply bg-gray-50 px-4 py-2 border-b border-gray-200 flex items-center justify-between;
+}
+
+.section-header-compact {
+  @apply px-4 py-3 bg-gray-50 border-b border-gray-200 flex items-center justify-between;
+}
+
+
+/* input fields */
+.input-field {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#417C7E] focus:border-transparent;
+}
+
+.input-field-sm {
+  @apply w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#417C7E] focus:border-[#417C7E] text-sm;
+}
+
+/* textarea */
+.textarea-field {
+  @apply w-full border-2 border-gray-200 rounded-lg p-3 focus:border-[#417C7E] focus:ring-2 focus:ring-[#417C7E]/20 transition-all;
+}
+
+/* labels */
+.label-text {
+  @apply text-sm font-medium text-gray-700 mb-2 block;
+}
+
+.label-text-compact {
+  @apply text-sm font-medium text-gray-700 mb-3 block;
+}
+
+/* message/Status Classes */
+
+.message-success {
+  @apply bg-green-50 text-green-700 border border-green-200 p-3 rounded-md text-sm;
+}
+
+.message-error {
+  @apply bg-red-50 text-red-700 border border-red-200 p-3 rounded-md text-sm;
+}
+
+.message-info {
+  @apply bg-blue-50 text-blue-700 border border-blue-200 p-3 rounded-md text-sm;
+}
+
+/* status badges */
+.badge-info {
+  @apply px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full;
+}
+
+.badge-gray {
+  @apply text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded;
+}
+
+/* common Layout Classes */
+
+/* upload/Drop zones */
+.upload-zone {
+  @apply border-2 border-dashed rounded-lg p-8 text-center transition-all duration-200 cursor-pointer;
+}
+
+.upload-zone.dragover {
+  @apply border-[#417C7E] bg-[#417C7E]/5;
+}
+
+.upload-zone:not(.dragover) {
+  @apply border-gray-300 hover:border-gray-400;
+}
+
+/* file info display */
+.file-info-card {
+  @apply mt-4 p-4 bg-gray-50 rounded-lg border;
+}
+
+/* progress bar */
+.progress-bar {
+  @apply bg-gray-200 rounded-full h-2;
+}
+
+.progress-fill {
+  @apply bg-[#417C7E] h-2 rounded-full;
+}
+
+/* chat */
+
+.chat-message {
+  @apply max-w-[80%] p-3 rounded-lg;
+}
+
+.chat-message.user {
+  @apply bg-[#417C7E] text-white;
+}
+
+.chat-message.bot {
+  @apply bg-gray-100 text-gray-800;
+}
+
+.chat-typing {
+  @apply bg-gray-100 text-gray-800 p-3 rounded-lg mr-4;
+}
+
+/* togg Classes */
+.toggle-switch {
+  @apply relative inline-flex h-6 w-11 items-center rounded-full transition-colors;
+}
+
+.toggle-switch.on {
+  @apply bg-[#417C7E];
+}
+
+.toggle-switch.off {
+  @apply bg-gray-300;
+}
+
+.toggle-knob {
+  @apply inline-block h-4 w-4 transform rounded-full bg-white transition-transform;
+}
+
+.toggle-knob.on {
+  @apply translate-x-6;
+}
+
+.toggle-knob.off {
+  @apply translate-x-1;
+}
+
+.grid-2-cols {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+.grid-3-cols {
+  @apply grid grid-cols-2 md:grid-cols-3 gap-2;
+}
+
+.grid-persona {
+  @apply grid grid-cols-3 gap-3;
+}
+
+.grid-export {
+  @apply grid grid-cols-2 gap-3;
+}
+
+
+
+.feature-card {
+  @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-teal-100;
+}
+
+.feature-title {
+  @apply text-lg font-semibold text-teal-800 mb-3;
+}
+
+.feature-description {
+  @apply text-gray-600 text-sm leading-relaxed;
+}
+
+.feature-progress-bg {
+  @apply w-full bg-teal-100 rounded-full h-1;
+}
+
+.feature-progress-fill {
+  @apply bg-teal-600 h-1 rounded-full w-full;
+}
+
+/* animation*/
+
+.loading-spinner {
+  @apply animate-spin rounded-full border-b-2;
+}
+
+.loading-dots > div {
+  @apply w-2 h-2 bg-gray-500 rounded-full animate-bounce;
+}
+
+.loading-dots > div:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.loading-dots > div:nth-child(3) {
+  animation-delay: 0.2s;
+}

@@ -4,20 +4,16 @@ export default function SummaryOptions({ mode, setMode, persona, setPersona, sen
   const personas = ['Developer', 'Manager', 'Client'];
 
   return (
-    <div className="mt-4 bg-white p-4 rounded-lg shadow-sm border border-gray-100">
+    <div className="section-card">
       {/* option section */}
       <div className="mb-4">
-        <label className="text-sm font-medium text-gray-700 mb-2 block">Summary Mode</label>
+        <label className="label-text">Summary Mode</label>
         <div className="flex space-x-3">
           {modes.map((modeOption) => (
             <button
               key={modeOption}
               onClick={() => setMode(modeOption)}
-              className={`px-4 py-2 rounded-lg border-2 transition-all duration-200 ${
-                mode === modeOption
-                  ? 'border-[#417C7E] bg-[#417C7E] text-white shadow-lg'
-                  : 'border-gray-200 bg-white text-gray-600 hover:border-[#417C7E] hover:bg-[#417C7E]/5'
-              }`}
+              className={`btn-selectable ${mode === modeOption ? 'selected' : ''}`}
             >
               <span className="text-sm font-medium">{modeOption}</span>
             </button>
@@ -27,17 +23,13 @@ export default function SummaryOptions({ mode, setMode, persona, setPersona, sen
 
       {/* persona section */}
       <div className="mb-4">
-        <label className="text-sm font-medium text-gray-700 mb-2 block">Target Audience</label>
-        <div className="grid grid-cols-3 gap-3">
+        <label className="label-text">Target Audience</label>
+        <div className="grid-persona">
           {personas.map((personaOption) => (
             <button
               key={personaOption}
               onClick={() => setPersona(personaOption)}
-              className={`px-4 py-3 rounded-lg border-2 transition-all duration-200 ${
-                persona === personaOption
-                  ? 'border-[#417C7E] bg-[#417C7E] text-white shadow-lg'
-                  : 'border-gray-200 bg-white text-gray-600 hover:border-[#417C7E] hover:bg-[#417C7E]/5'
-              }`}
+              className={`card-persona ${persona === personaOption ? 'selected' : ''}`}
             >
               <div className="text-center">
                 <div className="text-lg mb-1">
@@ -57,15 +49,9 @@ export default function SummaryOptions({ mode, setMode, persona, setPersona, sen
         <label className="text-sm font-medium text-gray-700">Include Sentiment Analysis</label>
         <button
           onClick={() => setSentiment(!sentiment)}
-          className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${
-            sentiment ? 'bg-[#417C7E]' : 'bg-gray-200'
-          }`}
+          className={`toggle-switch ${sentiment ? 'on' : 'off'}`}
         >
-          <span
-            className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-              sentiment ? 'translate-x-6' : 'translate-x-1'
-            }`}
-          />
+          <span className={`toggle-knob ${sentiment ? 'on' : 'off'}`} />
         </button>
       </div>
     </div>

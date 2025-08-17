@@ -98,18 +98,18 @@ export default function SummaryEditor({ initial = '' }) {
 
   return (
     <div className="border border-gray-200 rounded-lg overflow-hidden">
-      <div className="bg-gray-50 px-4 py-2 flex items-center justify-between border-b border-gray-200">
+      <div className="section-header">
         <div className="flex items-center space-x-2">
           <span className="text-sm font-medium text-gray-700">Summary Output</span>
           {edits.length > 0 && (
-            <span className="px-2 py-1 bg-blue-100 text-blue-800 text-xs rounded-full">
+            <span className="badge-info">
               {edits.length} edits
             </span>
           )}
         </div>
         <button
           onClick={() => setIsEditing(!isEditing)}
-          className="px-3 py-1 text-xs border border-gray-300 rounded hover:bg-white transition-colors"
+          className="btn-secondary-sm"
         >
           {isEditing ? 'View' : 'Edit'}
         </button>

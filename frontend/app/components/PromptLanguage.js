@@ -45,18 +45,16 @@ export default function PromptLanguage({ prompt, setPrompt, lang, setLang, onGen
   };
 
   return (
-    <div className="mt-4 bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+    <div className="section-card-lg">
       <div className="mb-4">
-        <label className="text-sm font-medium text-gray-700 mb-3 block">Quick Prompts</label>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-2">
+        <label className="label-text-compact">Quick Prompts</label>
+        <div className="grid-3-cols">
           {PREDEFINED_PROMPTS.map((preset) => (
             <button
               key={preset.label}
               onClick={() => handlePresetChange(preset.label)}
-              className={`p-3 text-left rounded-lg border-2 transition-all duration-200 ${
-                selectedPreset === preset.label
-                  ? 'border-[#417C7E] bg-[#417C7E]/5 text-[#417C7E]'
-                  : 'border-gray-200 bg-white text-gray-600 hover:border-[#417C7E]/50 hover:bg-[#417C7E]/5'
+              className={`btn-selectable p-3 text-left ${
+                selectedPreset === preset.label ? 'selected' : ''
               }`}
             >
               <div className="text-xs font-semibold mb-1">{preset.label}</div>
@@ -70,28 +68,24 @@ export default function PromptLanguage({ prompt, setPrompt, lang, setLang, onGen
 
       {/* Custom Prompt Input */}
       <div className="mb-4">
-        <label className="text-sm font-medium text-gray-700 mb-2 block">Custom Prompt</label>
+        <label className="label-text">Custom Prompt</label>
         <textarea 
           value={prompt} 
           onChange={(e) => setPrompt(e.target.value)} 
-          className="w-full border-2 border-gray-200 rounded-lg p-3 h-24 focus:border-[#417C7E] focus:ring-2 focus:ring-[#417C7E]/20 transition-all" 
+          className="textarea-field h-24" 
           placeholder="Describe how you want the transcript to be summarized..." 
         />
       </div>
 
       {/* language sec  */}
       <div className="mb-4">
-        <label className="text-sm font-medium text-gray-700 mb-2 block">Output Language</label>
+        <label className="label-text">Output Language</label>
         <div className="flex flex-wrap gap-2">
           {languages.map((language) => (
             <button
               key={language}
               onClick={() => setLang(language)}
-              className={`px-4 py-2 rounded-full border-2 transition-all duration-200 ${
-                lang === language
-                  ? 'border-[#417C7E] bg-[#417C7E] text-white shadow-md'
-                  : 'border-gray-200 bg-white text-gray-600 hover:border-[#417C7E] hover:bg-[#417C7E]/5'
-              }`}
+              className={`btn-language ${lang === language ? 'selected' : ''}`}
             >
               <span className="text-sm font-medium">
                 {language === 'English' && '🇺🇸'} 
@@ -111,7 +105,7 @@ export default function PromptLanguage({ prompt, setPrompt, lang, setLang, onGen
       <div className="flex items-center justify-end space-x-3">
         <button 
           onClick={onGenerate} 
-          className="px-6 py-2 rounded-lg bg-[#417C7E] text-white hover:bg-[#2d5759] transition-all duration-200 shadow-md hover:shadow-lg flex items-center space-x-2"
+          className="btn-primary-lg"
         >
           <span>Generate Summary</span>
         </button>

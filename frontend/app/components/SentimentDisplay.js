@@ -22,7 +22,7 @@ export default function SentimentDisplay({ sentimentData }) {
   };
 
   return (
-    <div className="bg-white p-4 rounded shadow-sm">
+    <div className="section-card">
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-medium text-gray-800">Sentiment Analysis</h3>
         <div className={`px-3 py-1 rounded-full border text-sm font-medium ${getSentimentColor(sentimentData.overall)}`}>
