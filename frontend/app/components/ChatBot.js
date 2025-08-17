@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { API_ENDPOINTS } from '../config/api';
 
 export default function ChatBot({ documentText }) {
   const [messages, setMessages] = useState([]);
@@ -29,7 +28,7 @@ export default function ChatBot({ documentText }) {
         }))
         .filter(item => item.question && item.answer);
 
-      const response = await fetch(API_ENDPOINTS.CHAT, {
+      const response = await fetch('http://localhost:3001/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

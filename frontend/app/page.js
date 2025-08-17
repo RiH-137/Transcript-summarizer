@@ -11,7 +11,6 @@ import ExportSection from './components/ExportSection';
 import EmailSection from './components/EmailSection';
 import ChatBot from './components/ChatBot';
 import FeaturesSection from './components/FeaturesSection';
-import { API_ENDPOINTS } from './config/api';
 
 export default function MangoDeskPage() {
   const [text, setText] = useState('');
@@ -47,7 +46,7 @@ export default function MangoDeskPage() {
       };
       console.log('Sending payload:', payload);
       
-      const res = await fetch(API_ENDPOINTS.SUMMARIZE, {
+      const res = await fetch('http://localhost:3001/summarize', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),

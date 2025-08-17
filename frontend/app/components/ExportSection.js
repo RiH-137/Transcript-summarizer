@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { API_ENDPOINTS } from '../config/api';
 
 export default function ExportSection({ summary, originalText, keyPoints = [] }) {
   const [isExporting, setIsExporting] = useState(false);
@@ -65,7 +64,7 @@ export default function ExportSection({ summary, originalText, keyPoints = [] })
     setIsExporting(true);
     
     try {
-      const response = await fetch(API_ENDPOINTS.EXPORT_DOCX, {
+      const response = await fetch('http://localhost:3001/export-docx', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 

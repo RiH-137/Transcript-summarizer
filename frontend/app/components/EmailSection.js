@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import { API_ENDPOINTS } from '../config/api';
 
 export default function EmailSection({ summary, keyPoints = [] }) {
   const [sending, setSending] = useState(false);
@@ -39,7 +38,7 @@ export default function EmailSection({ summary, keyPoints = [] }) {
     try {
       const emailBody = formatEmailBody();
       
-      const response = await fetch(API_ENDPOINTS.SEND_EMAIL, {
+      const response = await fetch('http://localhost:3001/send-email-with-auth', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
