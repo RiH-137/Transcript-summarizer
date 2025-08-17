@@ -15,8 +15,12 @@ const PREDEFINED_PROMPTS = [
     value: "Generate formal meeting minutes with attendees, agenda items discussed, decisions made, and action items assigned to specific people. If there are tabular details, present them as a clean, well-formatted table."
   },
   {
+    label: "Bullet Points for Executives",
+    value: "Summarize in bullet points for executives, focusing on high-level strategic points, key decisions, financial implications, and critical action items. Use clear, concise bullet points that can be quickly scanned by leadership."
+  },
+  {
     label: "Action Items Only",
-    value: "Extract only action items and tasks mentioned in the transcript. Include who is responsible and any mentioned deadlines. If there are tabular details, present them as a clean, well-formatted table."
+    value: "Highlight only action items from the transcript. Extract specific tasks, responsibilities, deadlines, and who is assigned to each item. Format as a numbered list for easy tracking and follow-up."
   },
   {
     label: "Key Insights",
