@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import { API_ENDPOINTS } from '../config/api';
 
 export default function KeyPoints({ originalText, summary, onKeyPointsUpdate }) {
   const [keyPoints, setKeyPoints] = useState([]);
@@ -21,7 +22,7 @@ export default function KeyPoints({ originalText, summary, onKeyPointsUpdate }) 
     
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:3001/extract-key-points', {
+      const response = await fetch(API_ENDPOINTS.EXTRACT_KEY_POINTS, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ 

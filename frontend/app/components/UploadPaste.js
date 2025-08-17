@@ -1,5 +1,6 @@
 'use client';
 import { useRef, useState } from 'react';
+import { API_ENDPOINTS } from '../config/api';
 
 export default function UploadPaste({ onTextChange }) {
   const fileRef = useRef();
@@ -24,7 +25,7 @@ export default function UploadPaste({ onTextChange }) {
       fd.append('file', f);
 
       // backend
-      const res = await fetch('http://localhost:3001/upload', { 
+      const res = await fetch(API_ENDPOINTS.UPLOAD, { 
         method: 'POST', 
         body: fd 
       });
@@ -50,10 +51,10 @@ export default function UploadPaste({ onTextChange }) {
     } catch (err) {
       let message = err.message;
       if (err instanceof TypeError && message === 'Failed to fetch') {
-        message = 'Could not connect to backend. Is the server running at http://localhost:3001?';
+        message = 'Could not connect to backend server. Please check your internet connection.';
       }
       console.error('Upload error:', err);
-      setPreview(`Bro, Upload failed: ${message}`);
+      setPreview(`Upload failed: ${message}`);
       setFileInfo(null);
       onTextChange?.('');
     } finally {
