@@ -1,11 +1,11 @@
-# MangoDesk - AI-Powered Transcript Summarizer
+# AppleDesk - AI-Powered Transcript Summarizer
 
 ## 🌟 Live Demo
 🔗 **[https://transcript-summarizer-eight.vercel.app/](https://transcript-summarizer-eight.vercel.app/)**
 
 ## 📖 Overview
 
-MangoDesk is a comprehensive AI-powered transcript summarization platform that transforms audio files and text documents into concise, detailed summaries with multiple persona perspectives. Built with modern web technologies and powered by advanced AI models.
+AppleDesk is a comprehensive AI-powered transcript summarization platform that transforms audio files and text documents into concise, detailed summaries with multiple persona perspectives. Built with modern web technologies and powered by advanced AI models.
 
 ## 🏗️ Architecture Overview
 
@@ -53,7 +53,7 @@ MangoDesk is a comprehensive AI-powered transcript summarization platform that t
 ## 📁 Project Structure
 
 ```
-MangoDesk/
+AppleDesk/
 ├── frontend/                          # Next.js Frontend Application
 │   ├── app/
 │   │   ├── components/                # Reusable UI components
@@ -88,7 +88,6 @@ MangoDesk/
 │   │   └── chatChannel.js          # Q&A chatbot
 │   ├── uploads/                     # Temporary file storage
 │   ├── server.js                    # Main server file
-│   ├── server-new.js               # Alternative server configuration
 │   ├── .env                        # Environment variables
 │   └── package.json                # Dependencies and scripts
 │

@@ -60,7 +60,7 @@ export default function FeaturesSection() {
             Powerful Features for Document Intelligence
           </h2>
           <p className="text-lg text-teal-600 max-w-2xl mx-auto">
-            MangoDesk combines advanced AI technology with intuitive design to transform how you work with documents
+            AppleDesk combines advanced AI technology with intuitive design to transform how you work with documents
           </p>
         </div>
         
@@ -89,7 +89,7 @@ export default function FeaturesSection() {
         
         <div className="text-center mt-12">
           <div className="inline-flex items-center justify-center px-6 py-3 bg-teal-600 text-white font-medium rounded-lg shadow-md">
-            <a href="#"><span>MangoDesk</span></a>
+            <a href="#"><span>AppleDesk</span></a>
           </div>
         </div>
       </div>

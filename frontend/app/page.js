@@ -13,7 +13,7 @@ import ChatBot from './components/ChatBot';
 import FeaturesSection from './components/FeaturesSection';
 import { API_URLS } from './config/api';
 
-export default function MangoDeskPage() {
+export default function AppleDeskPage() {
   const [text, setText] = useState('');
   const [mode, setMode] = useState('Concise');
   const [persona, setPersona] = useState('Developer');

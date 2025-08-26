@@ -11,7 +11,7 @@ export default function EmailSection({ summary, keyPoints = [] }) {
     senderEmail: '',
     senderPassword: '',
     recipientEmail: '',
-    subject: 'Meeting Summary - MangoDesk',
+    subject: 'Meeting Summary - AppleDesk',
     includeKeyPoints: true,
     emailProvider: 'gmail'
   });
@@ -93,7 +93,7 @@ ${keyPoints.map((point, index) => `${index + 1}. ${point}`).join('\n')}`;
 
 ---
 
-This summary was generated using MangoDesk.
+This summary was generated using AppleDesk.
 Generated on: ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}
 
 Best regards`;

@@ -4,7 +4,7 @@ export default function Header() {
     <header className="w-full flex items-center justify-between py-4 px-2 border-b bg-white">
       <div className="flex items-center space-x-3">
         <div>
-          <h1 className="text-2xl font-semibold text-gray-800">Mango<span className="text-[#417C7E]">Desk</span></h1>
+          <h1 className="text-2xl font-semibold text-gray-800">Apple<span className="text-[#417C7E]">Desk</span></h1>
           <p className="text-sm text-gray-500">Transcript summarizer — concise, detailed, multi-persona</p>
         </div>
       </div>

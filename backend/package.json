@@ -1,7 +1,7 @@
 {
-  "name": "mangodesk-backend",
+  "name": "Appledesk-backend",
   "version": "1.0.0",
-  "description": "Backend API for MangoDesk transcript summarizer",
+  "description": "Backend API for AppleDesk transcript summarizer",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -27,6 +27,6 @@
     "groq",
     "ai"
   ],
-  "author": "MangoDesk",
+  "author": "AppleDesk",
   "license": "MIT"
 }

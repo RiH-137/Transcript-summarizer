@@ -129,7 +129,7 @@ app.use((req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`MangoDesk Backend running on port ${PORT}`);
+  console.log(`AppleDesk Backend running on port ${PORT}`);
   console.log('Environment:', process.env.NODE_ENV || 'development');
   console.log('GROQ API Key configured:', !!process.env.GROQ_API_KEY);
 });

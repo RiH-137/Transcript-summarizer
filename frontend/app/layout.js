@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "MongoDesk",
-  description: "Developed by Rishi Ranjan",
+  title: "AppleDesk",
+  description: "Transcription and summarization tool",
 };
 
 export default function RootLayout({ children }) {
