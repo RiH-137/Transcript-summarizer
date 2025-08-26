@@ -6,7 +6,7 @@ export default function PrivacyPolicyModal({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-20 backdrop-blur-md flex items-center justify-center z-50 p-4">
+    <div className="fixed inset-0 bg-opacity-10 backdrop-blur-md flex items-center justify-center z-50 p-4">
       <div className="bg-white bg-opacity-95 backdrop-blur-sm rounded-xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden border border-gray-200">
         {/* Header */}
         <div className="bg-blue-50 bg-opacity-90 border-b border-blue-200 p-6">
