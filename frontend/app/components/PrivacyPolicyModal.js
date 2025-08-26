@@ -43,7 +43,7 @@ export default function PrivacyPolicyModal({ isOpen, onClose }) {
                     <span className="text-green-600 mt-1">▪</span>
                     <div>
                       <p className="font-medium">Temporary Storage Only</p>
-                      <p className="text-sm text-green-700">Files are stored temporarily in our server's 'uploads' directory during processing and automatically deleted immediately after processing completes.</p>
+                      <p className="text-sm text-green-700">Files are stored temporarily in our server&apos;s &apos;uploads&apos; directory during processing and automatically deleted immediately after processing completes.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
@@ -203,7 +203,7 @@ export default function PrivacyPolicyModal({ isOpen, onClose }) {
             <section className="bg-gray-50 border border-gray-200 p-6 rounded-lg">
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Questions About Our Privacy Policy?</h3>
               <p className="text-gray-600 text-sm mb-4">
-                We're committed to transparency about how AppleDesk works and protects your data. If you have any questions about our privacy practices or technical implementation, please contact us.
+                We&apos;re committed to transparency about how AppleDesk works and protects your data. If you have any questions about our privacy practices or technical implementation, please contact us.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a href="mailto:101rishidsr@gmail.com" 
