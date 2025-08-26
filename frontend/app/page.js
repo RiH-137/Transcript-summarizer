@@ -11,9 +11,14 @@ import ExportSection from './components/ExportSection';
 import EmailSection from './components/EmailSection';
 import ChatBot from './components/ChatBot';
 import FeaturesSection from './components/FeaturesSection';
+import LandingPage from './components/LandingPage';
+import Footer from './components/Footer';
+import HelpModal from './components/HelpModal';
 import { API_URLS } from './config/api';
 
 export default function AppleDeskPage() {
+  const [showLanding, setShowLanding] = useState(true);
+  const [showHelp, setShowHelp] = useState(false);
   const [text, setText] = useState('');
   const [mode, setMode] = useState('Concise');
   const [persona, setPersona] = useState('Developer');
@@ -74,6 +79,11 @@ export default function AppleDeskPage() {
     }
   }
 
+  // If showing landing page, render it
+  if (showLanding) {
+    return <LandingPage onNavigateToApp={() => setShowLanding(false)} />;
+  }
+
   return (
     <main className="min-h-screen bg-gray-50 py-8 px-4 flex justify-center">
       <div className="w-full max-w-7xl">
@@ -118,10 +128,10 @@ export default function AppleDeskPage() {
             />
           </div>
         </div>
-        <FeaturesSection />
+        <Footer onOpenHelp={() => setShowHelp(true)} />
       </div>
       
-      
+      <HelpModal isOpen={showHelp} onClose={() => setShowHelp(false)} />
       
     </main>
   );
