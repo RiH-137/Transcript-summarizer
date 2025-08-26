@@ -1,4 +1,4 @@
-export default function Footer({ onOpenHelp }) {
+export default function Footer({ onOpenHelp, onOpenPrivacyPolicy }) {
   return (
     <footer className="bg-white border-t border-gray-200 mt-16">
       <div className="max-w-7xl mx-auto px-4 py-12">
@@ -92,9 +92,12 @@ export default function Footer({ onOpenHelp }) {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors">
+                <button 
+                  onClick={onOpenPrivacyPolicy}
+                  className="text-gray-600 hover:text-blue-600 transition-colors text-left"
+                >
                   Privacy Policy
-                </a>
+                </button>
               </li>
             </ul>
           </div>

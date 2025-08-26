@@ -14,11 +14,13 @@ import FeaturesSection from './components/FeaturesSection';
 import LandingPage from './components/LandingPage';
 import Footer from './components/Footer';
 import HelpModal from './components/HelpModal';
+import PrivacyPolicyModal from './components/PrivacyPolicyModal';
 import { API_URLS } from './config/api';
 
 export default function AppleDeskPage() {
   const [showLanding, setShowLanding] = useState(true);
   const [showHelp, setShowHelp] = useState(false);
+  const [showPrivacyPolicy, setShowPrivacyPolicy] = useState(false);
   const [text, setText] = useState('');
   const [mode, setMode] = useState('Concise');
   const [persona, setPersona] = useState('Developer');
@@ -128,10 +130,14 @@ export default function AppleDeskPage() {
             />
           </div>
         </div>
-        <Footer onOpenHelp={() => setShowHelp(true)} />
+        <Footer 
+          onOpenHelp={() => setShowHelp(true)} 
+          onOpenPrivacyPolicy={() => setShowPrivacyPolicy(true)}
+        />
       </div>
       
       <HelpModal isOpen={showHelp} onClose={() => setShowHelp(false)} />
+      <PrivacyPolicyModal isOpen={showPrivacyPolicy} onClose={() => setShowPrivacyPolicy(false)} />
       
     </main>
   );
