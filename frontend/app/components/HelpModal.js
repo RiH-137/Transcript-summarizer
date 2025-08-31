@@ -239,7 +239,7 @@ export default function HelpModal({ isOpen, onClose }) {
             <div className="bg-indigo-50 border border-indigo-200 p-4 rounded-lg">
               <h4 className="font-semibold text-indigo-900 mb-3">AI Models Used</h4>
               <ul className="text-sm text-indigo-700 space-y-2">
-                <li><span className="font-medium">Groq AI:</span> Llama3-8B-8192 for text processing</li>
+                <li><span className="font-medium">Groq AI:</span> Llama-3.1-8B-Instant for text processing</li>
                 <li><span className="font-medium">Whisper:</span> Large v3 Turbo for audio transcription</li>
                 <li><span className="font-medium">Temperature:</span> 0.1 for consistent responses</li>
               </ul>

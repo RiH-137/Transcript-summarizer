@@ -41,7 +41,7 @@ AppleDesk is a comprehensive AI-powered transcript summarization platform that t
 
 ### AI & Machine Learning
 - **AI Provider**: [Groq](https://groq.com/)
-- **Model**: Llama3-8B-8192
+- **Model**: Llama-3.1-8B-Instant
 - **Audio Transcription**: Whisper Large v3 Turbo
 - **Processing**: Real-time AI inference
 
@@ -221,7 +221,7 @@ const API_CONFIG = {
 
 ### Groq AI Integration
 
-**Model Used**: `llama3-8b-8192`
+**Model Used**: `llama-3.1-8b-instant`
 - **Temperature**: 0.1 (for consistent, focused responses)
 - **Max Tokens**: 2048
 - **Top P**: 1
