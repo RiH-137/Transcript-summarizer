@@ -44,7 +44,7 @@ export class HealthCheck {
       const health = await this.checkBackendHealth();
       
       if (health.isHealthy) {
-        console.log('✅ Backend is healthy and ready!');
+        console.log(' Backend is healthy and ready!');
         return health;
       }
       
@@ -63,19 +63,20 @@ export class HealthCheck {
 export const getBackendStatusDisplay = (healthResult) => {
   if (healthResult.isHealthy) {
     return {
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
-      borderColor: 'border-green-200',
-      icon: '✅',
+      color: 'text-gray-800',
+      bgColor: 'bg-gray-100',
+      borderColor: 'border-gray-300',
+      icon: '',
       status: healthResult.status
     };
   } else {
     return {
       color: 'text-red-600',
-      bgColor: 'bg-red-50',
-      borderColor: 'border-red-200',
+      bgColor: 'bg-gray-100',
+      borderColor: 'border-gray-300',
       icon: '❌',
       status: healthResult.status
     };
   }
 };
+

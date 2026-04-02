@@ -73,7 +73,7 @@ export default function KeyPoints({ originalText, summary, onKeyPointsUpdate }) 
     <div className="bg-white p-4 rounded shadow-sm border border-gray-200">
       <div className="flex items-center justify-between mb-3">
         <h3 className="font-medium text-gray-800 flex items-center">
-          <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+          <span className="w-2 h-2 bg-gray-1000 rounded-full mr-2"></span>
           Key Points Used
         </h3>
       </div>
@@ -83,9 +83,9 @@ export default function KeyPoints({ originalText, summary, onKeyPointsUpdate }) 
           displayPoints.map((point, index) => (
             <div
               key={index}
-              className="flex items-start space-x-2 p-2 bg-blue-50 rounded border-l-3 border-blue-400"
+              className="flex items-start space-x-2 p-2 bg-gray-100 rounded border-l-3 border-gray-500"
             >
-              <span className="flex-shrink-0 w-5 h-5 bg-blue-500 text-white text-xs rounded-full flex items-center justify-center mt-0.5">
+              <span className="flex-shrink-0 w-5 h-5 bg-gray-1000 text-white text-xs rounded-full flex items-center justify-center mt-0.5">
                 {index + 1}
               </span>
               <p className="text-sm text-gray-700 leading-relaxed">
@@ -108,3 +108,4 @@ export default function KeyPoints({ originalText, summary, onKeyPointsUpdate }) 
     </div>
   );
 }
+

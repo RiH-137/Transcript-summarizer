@@ -41,7 +41,7 @@ export default function UploadPaste({ onTextChange }) {
       console.log('Upload response data:', data);
       
       if (data.success) {
-        setPreview(`✅ Successfully processed!`);
+        setPreview(` Successfully processed!`);
         setFileInfo(prev => ({ ...prev, wordCount: data.wordCount }));
         console.log('Calling onTextChange with text:', data.text?.substring(0, 100) + '...');
         onTextChange?.(data.text);
@@ -138,7 +138,7 @@ export default function UploadPaste({ onTextChange }) {
                 </p>
               )}
               <div className={`text-sm mt-2 ${
-                preview.startsWith('✅') ? 'text-green-600' : 
+                preview.startsWith('') ? 'text-green-600' : 
                 preview.startsWith('❌') ? 'text-red-600' : 
                 'text-blue-600'
               }`}>

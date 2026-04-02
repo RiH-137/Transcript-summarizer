@@ -13,7 +13,7 @@ export class BackendTest {
 
     console.log('\n📊 Test Results Summary:');
     Object.entries(results).forEach(([test, result]) => {
-      console.log(`${result.success ? '✅' : '❌'} ${test}: ${result.message}`);
+      console.log(`${result.success ? '' : '❌'} ${test}: ${result.message}`);
     });
 
     return results;
@@ -25,7 +25,7 @@ export class BackendTest {
       const health = await HealthCheck.checkBackendHealth();
       
       if (health.isHealthy) {
-        console.log(`✅ Health Check: ${health.message}`);
+        console.log(` Health Check: ${health.message}`);
         return { success: true, message: 'Backend is healthy and responding' };
       } else {
         console.log(`❌ Health Check: ${health.message}`);
@@ -50,7 +50,7 @@ export class BackendTest {
 
       if (response.ok) {
         const data = await response.json();
-        console.log('✅ Upload Test: File processed successfully');
+        console.log(' Upload Test: File processed successfully');
         return { success: true, message: 'Upload endpoint working', data };
       } else {
         console.log('❌ Upload Test: Failed');
@@ -80,7 +80,7 @@ export class BackendTest {
 
       if (response.ok) {
         const data = await response.json();
-        console.log('✅ Summarize Test: Summary generated successfully');
+        console.log(' Summarize Test: Summary generated successfully');
         return { success: true, message: 'Summarize endpoint working', data };
       } else {
         console.log('❌ Summarize Test: Failed');

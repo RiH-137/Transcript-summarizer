@@ -77,13 +77,13 @@ export default function LandingPage({ onNavigateToApp }) {
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <motion.section 
-        className="min-h-screen flex items-center justify-center px-4 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
+        className="min-h-screen flex items-center justify-center px-4 bg-gray-100 relative overflow-hidden"
         initial={{ opacity: 0 }}
         animate={{ opacity: isLoaded ? 1 : 0 }}
         transition={{ duration: 1 }}
       >
         {/* Background Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(65,124,126,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(65,124,126,0.03)_1px,transparent_1px)] bg-[size:50px_50px]" />
+        <div className="absolute inset-0 bg-gray-200/30" />
         
         <div className="text-center max-w-6xl mx-auto relative z-10">
           {/* Main Title */}
@@ -94,7 +94,7 @@ export default function LandingPage({ onNavigateToApp }) {
             className="mb-12"
           >
             <h1 className="text-6xl md:text-8xl font-bold mb-6 text-gray-900">
-              Apple<span className="text-[#417C7E]">Desk</span>
+              Apple<span className="text-gray-900">Desk</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-16 max-w-4xl mx-auto leading-relaxed">
               Transform your audio content into intelligent insights with AI-powered transcription and summarization
@@ -114,7 +114,7 @@ export default function LandingPage({ onNavigateToApp }) {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="w-32 h-32 rounded-full bg-[#417C7E] flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-[#417C7E]/20 transition-all duration-300">
+              <div className="w-32 h-32 rounded-full bg-gray-800 flex items-center justify-center shadow-xl group-hover:shadow-2xl group-hover:shadow-[#1f2937]/20 transition-all duration-300">
                 <svg 
                   className="w-10 h-10 text-white transform group-hover:translate-x-1 transition-transform duration-300" 
                   fill="none" 
@@ -124,7 +124,7 @@ export default function LandingPage({ onNavigateToApp }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5-5 5M6 12h12" />
                 </svg>
               </div>
-              <div className="absolute inset-0 rounded-full bg-[#417C7E] blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
+              <div className="absolute inset-0 rounded-full bg-gray-800 blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-300" />
             </motion.button>
           </motion.div>
 
@@ -160,7 +160,7 @@ export default function LandingPage({ onNavigateToApp }) {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
-              Powerful <span className="text-[#417C7E]">Features</span>
+              Powerful <span className="text-gray-900">Features</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Everything you need to transform your audio content into actionable insights
@@ -171,7 +171,7 @@ export default function LandingPage({ onNavigateToApp }) {
             {features.map((feature, index) => (
               <motion.div
                 key={index}
-                className="section-card-lg hover:shadow-lg transition-all duration-300 group hover:border-[#417C7E]/20"
+                className="section-card-lg hover:shadow-lg transition-all duration-300 group hover:border-gray-700/20"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -221,14 +221,14 @@ export default function LandingPage({ onNavigateToApp }) {
                 <motion.div 
                   className="w-80 h-16 bg-gray-100 rounded-full border-2 border-gray-200 relative overflow-hidden shadow-inner"
                   animate={{
-                    borderColor: dragProgress > 0.1 ? '#417C7E' : '#E5E7EB',
+                    borderColor: dragProgress > 0.1 ? '#1f2937' : '#E5E7EB',
                     boxShadow: dragProgress > 0.1 ? '0 0 20px rgba(65, 124, 126, 0.3)' : '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
                   }}
                   transition={{ duration: 0.2 }}
                 >
                   {/* Background fill that follows the drag */}
                   <motion.div
-                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#417C7E] to-[#5a9b9d] rounded-full"
+                    className="absolute top-0 left-0 h-full bg-gradient-to-r from-[#1f2937] to-[#374151] rounded-full"
                     style={{ 
                       width: backgroundX,
                       opacity: dragProgress * 0.3 + 0.1 
@@ -267,7 +267,7 @@ export default function LandingPage({ onNavigateToApp }) {
                     dragElastic={0.1}
                     style={{ x }}
                     animate={{
-                      borderColor: dragProgress > 0.1 ? '#417C7E' : '#E5E7EB',
+                      borderColor: dragProgress > 0.1 ? '#1f2937' : '#E5E7EB',
                       scale: dragProgress >= 0.95 ? 1.1 : 1,
                       boxShadow: dragProgress > 0.1 ? '0 10px 25px rgba(65, 124, 126, 0.3)' : '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
                     }}
@@ -282,13 +282,13 @@ export default function LandingPage({ onNavigateToApp }) {
                   >
                     {/* Arrow icon that rotates as user drags */}
                     <motion.svg 
-                      className="w-6 h-6 text-[#417C7E]" 
+                      className="w-6 h-6 text-gray-900" 
                       fill="none" 
                       stroke="currentColor" 
                       viewBox="0 0 24 24"
                       animate={{
                         rotate: dragProgress * 360,
-                        color: dragProgress > 0.8 ? '#10B981' : '#417C7E'
+                        color: dragProgress > 0.8 ? '#10B981' : '#1f2937'
                       }}
                     >
                       <path 
@@ -302,7 +302,7 @@ export default function LandingPage({ onNavigateToApp }) {
                   
                   {/* Shimmer effect */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-20 rounded-full"
+                    className="absolute inset-0 bg-transparent opacity-20 rounded-full"
                     animate={{
                       x: [-100, 400],
                       opacity: [0, 0.5, 0]
@@ -313,7 +313,7 @@ export default function LandingPage({ onNavigateToApp }) {
                       ease: "linear"
                     }}
                     style={{
-                      background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent)'
+                      background: 'transparent'
                     }}
                   />
                 </motion.div>
@@ -342,3 +342,4 @@ export default function LandingPage({ onNavigateToApp }) {
     </div>
   );
 }
+

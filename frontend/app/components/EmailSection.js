@@ -55,7 +55,7 @@ export default function EmailSection({ summary, keyPoints = [] }) {
       const data = await response.json();
 
       if (data.success) {
-        setMessage('✅ Email sent successfully!');
+        setMessage(' Email sent successfully!');
         setTimeout(() => {
           setMessage('');
         }, 3000);
@@ -219,7 +219,7 @@ Best regards`;
                   id="includeKeyPoints"
                   checked={formData.includeKeyPoints}
                   onChange={(e) => handleInputChange('includeKeyPoints', e.target.checked)}
-                  className="h-4 w-4 text-[#417C7E] focus:ring-[#417C7E] border-gray-300 rounded"
+                  className="h-4 w-4 text-gray-900 focus:ring-gray-400 border-gray-300 rounded"
                   disabled={sending}
                 />
                 <label htmlFor="includeKeyPoints" className="text-sm text-gray-700">
@@ -230,7 +230,7 @@ Best regards`;
               {/* Message Display */}
               {message && (
                 <div className={`p-3 rounded-md text-sm ${
-                  message.startsWith('✅') 
+                  message.startsWith('') 
                     ? 'message-success' 
                     : message.startsWith('❌')
                     ? 'message-error'
@@ -261,7 +261,7 @@ Best regards`;
               </div>
 
               {/* guide */}
-              <div className="bg-green-50 border border-grey-600 rounded-md p-3">
+              <div className="bg-gray-100 border border-grey-600 rounded-md p-3">
                 <div className="flex items-start space-x-2">
                   <div className="text-xs text-black">
                     <p className="font-medium mb-1">Guide:</p>
@@ -275,3 +275,4 @@ Best regards`;
     </div>
   );
 }
+

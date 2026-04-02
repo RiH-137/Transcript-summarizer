@@ -20,7 +20,7 @@ export default function Header() {
         <div className="flex items-center space-x-3">
           <button
             onClick={() => setShowHelp(true)}
-            className="px-3 py-1 rounded bg-green-100 text-green-700 hover:bg-green-200 transition flex items-center space-x-2"
+            className="px-3 py-1 rounded border border-gray-300 bg-gray-100 text-gray-700 hover:bg-gray-200 transition flex items-center space-x-2"
             title="Open Help Center"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -29,24 +29,24 @@ export default function Header() {
             <span>Help</span>
           </button>
           <a
-            href="https://github.com/RiH-137/AppleDesk/blob/project/README.md"
+            href="https://github.com/RiH-137/Transcript-summarizer/blob/project/README.md"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-1 rounded bg-blue-100 text-blue-700 hover:bg-blue-200 transition"
+            className="px-3 py-1 rounded border border-gray-300 bg-gray-100 text-gray-700 hover:bg-gray-200 transition"
           >
             Documentation
           </a>
           <a
-            href="https://github.com/RiH-137/AppleDesk"
+            href="https://github.com/RiH-137/Transcript-summarizer"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-3 py-1 rounded bg-gray-100 text-gray-700 hover:bg-gray-200 transition"
+            className="px-3 py-1 rounded border border-gray-300 bg-gray-100 text-gray-700 hover:bg-gray-200 transition"
           >
             GitHub
           </a>
           <button
             onClick={() => setShowPrivacyPolicy(true)}
-            className="px-3 py-1 rounded bg-purple-100 text-purple-700 hover:bg-purple-200 transition flex items-center space-x-2"
+            className="px-3 py-1 rounded border border-gray-300 bg-gray-100 text-gray-700 hover:bg-gray-200 transition flex items-center space-x-2"
             title="View Privacy Policy & Technical Details"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

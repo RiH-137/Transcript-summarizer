@@ -53,13 +53,13 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <div className="mt-16 bg-gradient-to-br from-teal-50 to-teal-100 py-16">
+    <div className="mt-16 bg-gray-100 py-16">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-teal-800 mb-4">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Powerful Features for Document Intelligence
           </h2>
-          <p className="text-lg text-teal-600 max-w-2xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-2xl mx-auto">
             AppleDesk combines advanced AI technology with intuitive design to transform how you work with documents
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function FeaturesSection() {
                   {feature.description}
                 </p>
               </div>
-              <div className="mt-4 pt-4 border-t border-teal-100">
+              <div className="mt-4 pt-4 border-t border-gray-200">
                 <div className="feature-progress-bg">
                   <div className="feature-progress-fill"></div>
                 </div>
@@ -88,7 +88,7 @@ export default function FeaturesSection() {
         </div>
         
         <div className="text-center mt-12">
-          <div className="inline-flex items-center justify-center px-6 py-3 bg-teal-600 text-white font-medium rounded-lg shadow-md">
+          <div className="inline-flex items-center justify-center px-6 py-3 bg-gray-700 text-white font-medium rounded-lg shadow-md">
             <a href="#"><span>AppleDesk</span></a>
           </div>
         </div>
@@ -96,3 +96,4 @@ export default function FeaturesSection() {
     </div>
   );
 }
+

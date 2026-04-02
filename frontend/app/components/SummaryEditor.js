@@ -22,12 +22,12 @@ export default function SummaryEditor({ initial = '' }) {
     let formatted = text
       .replace(/\*\*(.*?)\*\*/g, '<strong class="font-bold text-gray-900">$1</strong>')
       .replace(/\*(.*?)\*/g, '<em class="italic text-gray-700">$1</em>')
-      .replace(/^#{1}\s(.+)$/gm, '<h1 class="text-2xl font-bold text-[#417C7E] mb-3 mt-4">$1</h1>')
-      .replace(/^#{2}\s(.+)$/gm, '<h2 class="text-xl font-semibold text-[#417C7E] mb-2 mt-3">$1</h2>')
+      .replace(/^#{1}\s(.+)$/gm, '<h1 class="text-2xl font-bold text-gray-900 mb-3 mt-4">$1</h1>')
+      .replace(/^#{2}\s(.+)$/gm, '<h2 class="text-xl font-semibold text-gray-900 mb-2 mt-3">$1</h2>')
       .replace(/^#{3}\s(.+)$/gm, '<h3 class="text-lg font-medium text-gray-800 mb-2 mt-3">$1</h3>')
-      .replace(/ACTION:\s(.+)$/gm, '<div class="bg-yellow-50 border-l-4 border-yellow-400 p-3 mb-2"><span class="font-semibold text-yellow-800">ACTION:</span> <span class="text-yellow-700">$1</span></div>')
-      .replace(/DECISION:\s(.+)$/gm, '<div class="bg-green-50 border-l-4 border-green-400 p-3 mb-2"><span class="font-semibold text-green-800">DECISION:</span> <span class="text-green-700">$1</span></div>')
-      .replace(/KEY:\s(.+)$/gm, '<div class="bg-blue-50 border-l-4 border-blue-400 p-3 mb-2"><span class="font-semibold text-blue-800">KEY:</span> <span class="text-blue-700">$1</span></div>')
+      .replace(/ACTION:\s(.+)$/gm, '<div class="bg-gray-100 border-l-4 border-gray-500 p-3 mb-2"><span class="font-semibold text-gray-800">ACTION:</span> <span class="text-gray-700">$1</span></div>')
+      .replace(/DECISION:\s(.+)$/gm, '<div class="bg-gray-100 border-l-4 border-gray-500 p-3 mb-2"><span class="font-semibold text-gray-800">DECISION:</span> <span class="text-gray-700">$1</span></div>')
+      .replace(/KEY:\s(.+)$/gm, '<div class="bg-gray-100 border-l-4 border-gray-500 p-3 mb-2"><span class="font-semibold text-gray-800">KEY:</span> <span class="text-gray-700">$1</span></div>')
       .replace(/^\-\s(.+)$/gm, '<li class="text-gray-700 mb-1">$1</li>')
       .replace(/^\d+\.\s(.+)$/gm, '<li class="text-gray-700 mb-1">$1</li>');
 
@@ -56,7 +56,7 @@ export default function SummaryEditor({ initial = '' }) {
         const tableHTML = `
           <div class="overflow-x-auto mb-4">
             <table class="min-w-full border border-gray-300 rounded-lg">
-              <thead class="bg-[#417C7E] text-white">
+              <thead class="bg-gray-800 text-white">
                 <tr>
                   ${tableRows[0].map(header => `<th class="px-4 py-2 text-left font-semibold">${header}</th>`).join('')}
                 </tr>
@@ -120,7 +120,7 @@ export default function SummaryEditor({ initial = '' }) {
           <textarea
             value={text}
             onChange={handleChange}
-            className="w-full h-64 border border-gray-300 rounded p-3 text-sm font-mono resize-none focus:ring-2 focus:ring-[#417C7E] focus:border-[#417C7E]"
+            className="w-full h-64 border border-gray-300 rounded p-3 text-sm font-mono resize-none focus:ring-2 focus:ring-gray-400 focus:border-gray-700"
             placeholder="Your summary will appear here..."
           />
         ) : (
@@ -133,3 +133,4 @@ export default function SummaryEditor({ initial = '' }) {
     </div>
   );
 }
+
